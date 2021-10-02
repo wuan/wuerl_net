@@ -49,38 +49,11 @@ params:
     assets:
         # disableHLJS: true # to disable highlight.js
         # disableFingerprinting: true
-        favicon: "<link / abs url>"
-        favicon16x16: "<link / abs url>"
-        favicon32x32: "<link / abs url>"
-        apple_touch_icon: "<link / abs url>"
-        safari_pinned_tab: "<link / abs url>"
-
-    label:
-        text: ""
-        #icon: /apple-touch-icon.png
-        iconHeight: 35
-
-    # profile-mode
-    profileMode:
-        enabled: false # needs to be explicitly set
-        title: Startseite
-        subtitle: "Welcome to wuerl.net"
-        imageUrl: "<img location>"
-        imageWidth: 120
-        imageHeight: 120
-        imageTitle: my image
-        buttons:
-            - name: Posts
-              url: post
-            - name: Publications
-              url: publication
-            - name: Tags
-              url: tags
-
-    # home-info mode
-    homeInfoParams:
-        Title: "Welcome to wuerl.net!"
-        #Content: Welcome to my blog
+        #favicon: "<link / abs url>"
+        #favicon16x16: "<link / abs url>"
+        #favicon32x32: "<link / abs url>"
+        #apple_touch_icon: "<link / abs url>"
+        #safari_pinned_tab: "<link / abs url>"
 
     socialIcons:
         - name: twitter
@@ -102,7 +75,7 @@ params:
         hiddenInSingle: true # hide on single page
 
     editPost:
-        URL: "https://github.com/<path_to_repo>/content"
+        URL: "https://github.com/wuan/wuerl_net/content"
         Text: "Suggest Changes" # edit text
         appendFilePath: true # to append file path to Edit link
 
@@ -121,7 +94,7 @@ menu:
         - identifier: posts
           name: Posts
           url: /post/
-          weight: 20
+          weight: 10
         - identifier: publications
           name: Publications
           url: /publication/
