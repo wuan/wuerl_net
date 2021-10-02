@@ -22,24 +22,24 @@ Die Dissertation wurde am [Lehrstuhl Leiderer](http://cms.uni-konstanz.de/physik
     -   [Cyclotron resonance for 2D electrons on helium films above rough substrates](http://nbn-resolving.de/urn:nbn:de:bsz:352-opus-27498 "Opens external link in new window") - Würl, Andreas ; Klier, Jürgen ; Leiderer, Paul ; Shikin, Valeri - Physica / E [Low-dimensional Systems and Nanostructures], Vol. 18 (2003), 1-3, pp. 184-185
     -   [Anticrossing Phenomena in a Resonator with 2D Electrons on Liquid Helium](http://link.springer.com/article/10.1134%2F1.1738719) - Klier, Juergen; Würl, Andreas; Shikin, Valeri - JETP Letters 79 (2004), p. 218
 -   Online-Messdaten
-    -   [Messdatenkatalog](http://wuerl.net/diss/microwave/ "Opens external link in current window") Mikrowellenaufbau
-    -   [Gnuplot-Dateien](http://wuerl.net/diss/gp/ "Opens external link in current window") um die Abbildungen in der Dissertation zu erzeugen
+    -   [Messdatenkatalog](https://wuerl.net/diss/microwave/ "Opens external link in current window") Mikrowellenaufbau
+    -   [Gnuplot-Dateien](https://wuerl.net/diss/gp/ "Opens external link in current window") um die Abbildungen in der Dissertation zu erzeugen
 -   Vortragsfolien / Poster
-    -   [Poster](http://wuerl.net/diss/talks/Poster_DPG_2002.pdf "Initiates file download") DPG-Frühjahrstagung 2002
-    -   [Vortrag](http://wuerl.net/diss/talks/RTN2002_London_Andreas.pdf "Initiates file download") RTN-Treffen London 06/2002
-    -   [Poster](http://wuerl.net/diss/talks/Poster_LT23_2002.pdf "Initiates file download") LT23 2002
-    -   [Abschlussvortrag](http://wuerl.net/diss/talks/Abschlussvortrag_Andreas_Wuerl.pdf "Initiates file download") 12/2002
-    -   [Vortrag](http://wuerl.net/diss/talks/RTN2002_Paris_Andreas.pdf "Initiates file download") RTN-Treffen Paris 12/2002
-    -   [Vortrag](http://wuerl.net/diss/talks/Doktorpruefung_Andreas_Wuerl.pdf "Initiates file download") Doktorprüfung 07/2006 ([LabVIEW Projekt](http://www.wuerl.net/fileadmin/awuerl/diss/VIs.zip "VIs.zip (1.0 MB)") zur Visualisierung des Kuramoto-Modells)
+    -   [Poster](https://wuerl.net/diss/talks/Poster_DPG_2002.pdf "Initiates file download") DPG-Frühjahrstagung 2002
+    -   [Vortrag](https://wuerl.net/diss/talks/RTN2002_London_Andreas.pdf "Initiates file download") RTN-Treffen London 06/2002
+    -   [Poster](https://wuerl.net/diss/talks/Poster_LT23_2002.pdf "Initiates file download") LT23 2002
+    -   [Abschlussvortrag](https://wuerl.net/diss/talks/Abschlussvortrag_Andreas_Wuerl.pdf "Initiates file download") 12/2002
+    -   [Vortrag](https://wuerl.net/diss/talks/RTN2002_Paris_Andreas.pdf "Initiates file download") RTN-Treffen Paris 12/2002
+    -   [Vortrag](https://wuerl.net/diss/talks/Doktorpruefung_Andreas_Wuerl.pdf "Initiates file download") Doktorprüfung 07/2006 ([LabVIEW Projekt](https://wuerl.net/diss/VIs.zip "VIs.zip (1.0 MB)") zur Visualisierung des Kuramoto-Modells)
 -   Software
-    -   [TCL-Messskripte](http://wuerl.net/diss/software/meas_scripts.tgz "Initiates file download")
-    -   [TCL Befehlserweiterungen](http://wuerl.net/diss/software/tcl_meas.tgz "Initiates file download")
-    -   [Bibliothek](http://wuerl.net/diss/software/rwadat.tgz "Initiates file download") binäres Datenformat
+    -   [TCL-Messskripte](https://wuerl.net/diss/software/meas_scripts.tgz "Initiates file download")
+    -   [TCL Befehlserweiterungen](https://wuerl.net/diss/software/tcl_meas.tgz "Initiates file download")
+    -   [Bibliothek](https://wuerl.net/diss/software/rwadat.tgz "Initiates file download") binäres Datenformat
     -   Auswertungs-Software
-        -   [Auswertungsskripte](http://wuerl.net/diss/software/analysis_scripts.tgz "Opens external link in new window")
-        -   [laufender Mittelwert](http://wuerl.net/diss/software/smooth.tgz "Opens external link in new window")
-        -   [Kurvenanpassung](http://wuerl.net/diss/software/hpna.tgz "Opens external link in new window") an Resonanzkurven des Netzwerkanalysators
+        -   [Auswertungsskripte](https://wuerl.net/diss/software/analysis_scripts.tgz "Opens external link in new window")
+        -   [laufender Mittelwert](https://wuerl.net/diss/software/smooth.tgz "Opens external link in new window")
+        -   [Kurvenanpassung](https://wuerl.net/diss/software/hpna.tgz "Opens external link in new window") an Resonanzkurven des Netzwerkanalysators
     -   Hardware-Treiber
-        -   [einfacher Linux-Treiber](http://wuerl.net/diss/software/gpib-pc2-pc2a.tgz "Opens external link in new window") für PC-II/PC-IIA kompatible GPIB-Hardware
-        -   [RealTime-Linux Treiber](http://wuerl.net/diss/software/rtl_parport.tgz "Initiates file download") für den Parallelport (digitale Ausgabe über den Parallelport)
-        -   [RealTime-Linux Treiber](http://wuerl.net/diss/software/rtl_pcl812pg.tgz "Initiates file download") für die Advantech PCL-812PG MIO-Karte (AI, AO, DO)
+        -   [einfacher Linux-Treiber](https://wuerl.net/diss/software/gpib-pc2-pc2a.tgz "Opens external link in new window") für PC-II/PC-IIA kompatible GPIB-Hardware
+        -   [RealTime-Linux Treiber](https://wuerl.net/diss/software/rtl_parport.tgz "Initiates file download") für den Parallelport (digitale Ausgabe über den Parallelport)
+        -   [RealTime-Linux Treiber](https://wuerl.net/diss/software/rtl_pcl812pg.tgz "Initiates file download") für die Advantech PCL-812PG MIO-Karte (AI, AO, DO)
