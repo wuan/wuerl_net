@@ -1,7 +1,12 @@
 ---
 title: "Facharbeit"
 layout: "post"
-summary: publications
+summary: Facharbeit im Fach Physik, Februar 1991
+tags:
+  - publication
+  - school
+  - facharbeit
+weight: 10
 ---
 
 Titel: "Tanz der Trojaner"

@@ -1,7 +1,12 @@
 ---
 title: "Doktorarbeit"
 layout: "post"
-summary: publications
+summary: Doktorarbeit Physik, Universität Konstanz, Juli 2006
+tags:
+  - publication
+  - university
+  - phd
+weight: 30
 ---
 
 Titel: "Hochfrequenzuntersuchungen an zweidimensionalen Elektronensystemen auf dünnen Heliumfilmen"

@@ -1,11 +1,12 @@
 ---
 title: "Diplomarbeit"
 layout: "post"
-summary: publications
+summary: Diplomarbeit im Fach Physik, Universität Bayreuth, Mai 1997
 tags:
   - publication
   - university
   - diploma
+weight: 20
 ---
 
 Titel: Magnetische Kernspinresonanz an AuGa_2

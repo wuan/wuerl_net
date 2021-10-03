@@ -1,7 +1,8 @@
 ---
 title: "Logging and visualization of distributed sensor measurements"
-layout: "post"
-summary: posts
+layout: post
+summary: Environmental sensor control with a RasbperryPi
+date: 2017-08-20
 ---
 
 

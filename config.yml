@@ -3,13 +3,14 @@ languageCode: en-us
 title: wuerl.net
 theme: "PaperMod"
 
-
+enableInlineShortcodes: true
 enableRobotsTXT: true
 buildDrafts: false
 buildFuture: false
 buildExpired: false
+enableEmoji: true
 
-googleAnalytics: UA-123-45
+# googleAnalytics: UA-123-45
 
 minify:
     disableXML: true
@@ -23,12 +24,10 @@ outputs:
 
 params:
     env: production # to enable google analytics, opengraph, twitter-cards and schema.
-    title: ExampleSite
-    description: "ExampleSite description"
+    description: "wuerl.net site"
     keywords: [Blog, Portfolio, PaperMod]
-    author: Me
-    # author: ["Me", "You"] # multiple authors
-    images: ["<link or path of image for opengraph, twitter-cards>"]
+    author: Andreas Würl
+     #images: ["<link or path of image for opengraph, twitter-cards>"]
     DateFormat: "January 2, 2006"
     defaultTheme: auto # dark, light
     disableThemeToggle: false
@@ -46,7 +45,7 @@ params:
     showtoc: false
     tocopen: false
 
-    assets:
+    #assets:
         # disableHLJS: true # to disable highlight.js
         # disableFingerprinting: true
         #favicon: "<link / abs url>"
@@ -54,6 +53,14 @@ params:
         #favicon32x32: "<link / abs url>"
         #apple_touch_icon: "<link / abs url>"
         #safari_pinned_tab: "<link / abs url>"
+
+    homeInfoParams:
+      Title: "Welcome to wuerl.net!"
+      Content: >
+        - ## Diverses
+
+        - [Hochzeitsbilder](https://tryb.de/tobi_nadine) von Tobi und Nadine
+        
 
     socialIcons:
         - name: twitter
@@ -91,15 +98,15 @@ params:
         keys: ["title", "permalink", "summary", "content"]
 menu:
     main:
-        - identifier: posts
+        - identifier: post
           name: Posts
           url: /post/
           weight: 10
-        - identifier: publications
+        - identifier: publication
           name: Publications
           url: /publication/
           weight: 20
-        - identifier: tags
+        - identifier: tag
           name: Tags
           url: /tags/
           weight: 30
