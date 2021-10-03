@@ -6,7 +6,8 @@ tags:
   - publication
   - university
   - phd
-weight: 30
+weight: 10
+date: 2006-07-24
 ---
 
 Titel: "Hochfrequenzuntersuchungen an zweidimensionalen Elektronensystemen auf dünnen Heliumfilmen"
@@ -15,9 +16,12 @@ Fach: Physik
 
 Die Dissertation wurde am Lehrstuhl von [Paul Leiderer](https://de.wikipedia.org/wiki/Paul_Leiderer) an der [Universität Konstanz](http://www.uni-konstanz.de/) durchgeführt.
 
+[![Download Dissertation](../dissertation/dissertation_icon.png)](http://kops.uni-konstanz.de/bitstream/handle/123456789/4967/Dissertation_Andreas_Wuerl.pdf?sequence=1&isAllowed=y)
+
 -   Veröffentlichung (URN: [urn:nbn:de:bsz:352-opus-19799](http://nbn-resolving.de/urn/resolver.pl?urn=urn:nbn:de:bsz:352-opus-19799))
     -   [Veröffentlichung](http://kops.ub.uni-konstanz.de/handle/urn:nbn:de:bsz:352-opus-19799) im [KOPS](http://www.ub.uni-konstanz.de/kops/)
     -   [PDF-Datei](http://kops.uni-konstanz.de/bitstream/handle/123456789/4967/Dissertation_Andreas_Wuerl.pdf?sequence=1&isAllowed=y)
+
 -   Publikationen
     -   [Chemical reaction between hydrogen atoms and electrons on the surface of superfluid ^4^He](http://nbn-resolving.de/urn:nbn:de:bsz:352-opus-28379) - Arai, Toshikazu; Würl, Andreas; Leiderer, Paul; Shiino, Toshiyuki; Kono, Kimitoshi - Physica B, 284-288, 164, (1999)
     -   [Dip problem of the electron mobility on a thin helium film](http://nbn-resolving.de/urn:nbn:de:bsz:352-opus-27911) - Shikin, Valeri ; Klier, Jürgen ; Doicescu, Irena ; Würl, Andreas ; Leiderer, Paul - First publ. in: Physical Review B 64 (2001), Article 073401

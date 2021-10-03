@@ -82,7 +82,7 @@ params:
         hiddenInSingle: true # hide on single page
 
     editPost:
-        URL: "https://github.com/wuan/wuerl_net/content"
+        URL: "https://github.com/wuan/wuerl_net/tree/main/content"
         Text: "Suggest Changes" # edit text
         appendFilePath: true # to append file path to Edit link
 
@@ -110,6 +110,11 @@ menu:
           name: Tags
           url: /tags/
           weight: 30
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
 
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 # pygmentsUseClasses: true

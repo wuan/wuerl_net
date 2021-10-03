@@ -6,7 +6,8 @@ tags:
   - publication
   - school
   - facharbeit
-weight: 10
+weight: 30
+date: 1991-01-18
 ---
 
 Titel: "Tanz der Trojaner"
