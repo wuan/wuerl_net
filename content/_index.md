@@ -1,12 +1,12 @@
 ---
-title: "Logging and visualization of distributed sensor measurements"
+title: "Home page"
 layout: post
-summary: Environmental sensor control with a RasbperryPi
-tags:
-  - hardware
-  - raspberrypi
+summary: Homen page
+tags: []
 date: 2017-08-20
 ---
+
+# Willkommen auf wuerl.net!
 
 ## Diverses
 
