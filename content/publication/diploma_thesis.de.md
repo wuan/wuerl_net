@@ -10,7 +10,7 @@ weight: 20
 date: 1998-03-02
 ---
 
-Titel: Magnetische Kernspinresonanz an AuGa_2
+Titel: Magnetische Kernspinresonanz an AuGa<sub>2</sub>
 
 Fach: Physik 
 
