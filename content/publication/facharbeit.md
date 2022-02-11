@@ -14,6 +14,6 @@ Titel: "Tanz der Trojaner"
 
 Fach: Physik 
 
-Durchgeführt am [Werner-von-Siemens-Gymnasium](https://www.wvsgym.de/) [Weißenburg]{https://www.weissenburg.de/} bei Michael Bauer
+Durchgeführt am [Werner-von-Siemens-Gymnasium](https://www.wvsgym.de/) [Weißenburg](https://www.weissenburg.de/) bei Michael Bauer
 
 [![Download Facharbeit](facharbeit_miniatur.png)](facharbeit_andreas_wuerl.pdf)
