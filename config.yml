@@ -58,8 +58,8 @@ params:
       Title: Social Media
     
     socialIcons:
-        - name: twitter
-          url: "https://twitter.com/awuerl"
+        - name: mastodon
+          url: "https://sueden.social/@wuan"
         - name: github
           url: "https://github.com/wuan"
 
