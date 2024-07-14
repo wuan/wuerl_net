@@ -16,7 +16,7 @@ Fach: Physik
 
 Durchgeführt am Lehrstuhl EP V der [Universität Bayreuth](https://www.physik.uni-bayreuth.de/) bei [Prof. Girgl Eska](https://www.physik.uni-bayreuth.de/de/forschung/memorial/eska_georg/index.php)
 
-[<kbd>![Download Facharbeit](../diploma_thesis/diplomarbeit_icon.png)</kbd>](https://github.com/wuan/diplomarbeit/releases/latest/download/Diplomarbeit.pdf)
+[<kbd>![Download Facharbeit](../diploma_thesis/diplomarbeit_miniature.png)</kbd>](https://github.com/wuan/diplomarbeit/releases/latest/download/Diplomarbeit.pdf)
 
 [Quellcode](https://github.com/wuan/diplomarbeit)
 
