@@ -121,3 +121,14 @@ markup:
 #         lineNos: true
 #         style: monokai
 
+
+security:
+  enableInlineShortcodes: false
+  exec:
+    allow:
+      - ^(dart-)?sass(-embedded)?$
+      - ^go$
+      - ^npx$
+      - ^postcss$
+      - ^tailwindcss$
+      - ^asciidoctor$
