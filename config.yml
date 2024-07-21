@@ -62,6 +62,8 @@ params:
           url: "https://sueden.social/@wuan"
         - name: github
           url: "https://github.com/wuan"
+        - name: linkedin
+          url: "https://www.linkedin.com/in/awuerl/"
 
 #    analytics:
 #        google:
