@@ -13,8 +13,8 @@ enableEmoji: true
 # googleAnalytics: UA-123-45
 
 minify:
-    disableXML: true
-    minifyOutput: true
+  disableXML: true
+  minifyOutput: true
 
 outputs:
   home:
@@ -23,90 +23,90 @@ outputs:
     - JSON
 
 params:
-    env: production # to enable google analytics, opengraph, twitter-cards and schema.
-    description: "wuerl.net site"
-    keywords: [Blog, Portfolio, PaperMod]
-    author: Andreas Würl
-     #images: ["<link or path of image for opengraph, twitter-cards>"]
-    DateFormat: "January 2, 2006"
-    defaultTheme: auto # dark, light
-    disableThemeToggle: false
+  env: production # to enable google analytics, opengraph, twitter-cards and schema.
+  description: "wuerl.net site"
+  keywords: [ Blog, Portfolio, PaperMod ]
+  author: Andreas Würl
+  #images: ["<link or path of image for opengraph, twitter-cards>"]
+  DateFormat: "January 2, 2006"
+  defaultTheme: auto # dark, light
+  disableThemeToggle: false
 
-    ShowReadingTime: true
-    ShowShareButtons: true
-    ShowPostNavLinks: true
-    ShowBreadCrumbs: true
-    ShowCodeCopyButtons: true
-    disableSpecial1stPost: false
-    disableScrollToTop: false
-    comments: false
-    hidemeta: false
-    hideSummary: false
-    showtoc: false
-    tocopen: false
+  ShowReadingTime: true
+  ShowShareButtons: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  disableSpecial1stPost: false
+  disableScrollToTop: false
+  comments: false
+  hidemeta: false
+  hideSummary: false
+  showtoc: false
+  tocopen: false
 
     #assets:
-        # disableHLJS: true # to disable highlight.js
-        # disableFingerprinting: true
-        #favicon: "<link / abs url>"
-        #favicon16x16: "<link / abs url>"
-        #favicon32x32: "<link / abs url>"
-        #apple_touch_icon: "<link / abs url>"
-        #safari_pinned_tab: "<link / abs url>"
+    # disableHLJS: true # to disable highlight.js
+    # disableFingerprinting: true
+    #favicon: "<link / abs url>"
+    #favicon16x16: "<link / abs url>"
+    #favicon32x32: "<link / abs url>"
+    #apple_touch_icon: "<link / abs url>"
+  #safari_pinned_tab: "<link / abs url>"
 
-    homeInfoParams:
-      Title: Social Media
-    
-    socialIcons:
-        - name: mastodon
-          url: "https://sueden.social/@wuan"
-        - name: github
-          url: "https://github.com/wuan"
-        - name: linkedin
-          url: "https://www.linkedin.com/in/awuerl/"
+  homeInfoParams:
+    Title: Social Media
 
-#    analytics:
-#        google:
-#            SiteVerificationTag: "XYZabc"
-#        bing:
-#            SiteVerificationTag: "XYZabc"
-#        yandex:
-#            SiteVerificationTag: "XYZabc"
+  socialIcons:
+    - name: linkedin
+      url: "https://www.linkedin.com/in/awuerl/"
+    - name: github
+      url: "https://github.com/wuan"
+    - name: mastodon
+      url: "https://sueden.social/@wuan"
 
-    cover:
-        hidden: false # hide everywhere but not in structured data
-        hiddenInList: false # hide on list pages and home
-        hiddenInSingle: false # hide on single page
+  #    analytics:
+  #        google:
+  #            SiteVerificationTag: "XYZabc"
+  #        bing:
+  #            SiteVerificationTag: "XYZabc"
+  #        yandex:
+  #            SiteVerificationTag: "XYZabc"
 
-    editPost:
-        URL: "https://github.com/wuan/wuerl_net/tree/main/content"
-        Text: "Suggest Changes" # edit text
-        appendFilePath: true # to append file path to Edit link
+  cover:
+    hidden: false # hide everywhere but not in structured data
+    hiddenInList: false # hide on list pages and home
+    hiddenInSingle: false # hide on single page
 
-    # for search
-    # https://fusejs.io/api/options.html
-    fuseOpts:
-        isCaseSensitive: false
-        shouldSort: true
-        location: 0
-        distance: 1000
-        threshold: 0.4
-        minMatchCharLength: 0
-        keys: ["title", "permalink", "summary", "content"]
+  editPost:
+    URL: "https://github.com/wuan/wuerl_net/tree/main/content"
+    Text: "Suggest Changes" # edit text
+    appendFilePath: true # to append file path to Edit link
+
+  # for search
+  # https://fusejs.io/api/options.html
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    keys: [ "title", "permalink", "summary", "content" ]
 menu:
-    main:
-        - identifier: post
-          name: Posts
-          url: /post/
-          weight: 10
-        - identifier: publication
-          name: Publications
-          url: /publication/
-          weight: 20
-        - identifier: tag
-          name: Tags
-          url: /tags/
-          weight: 30
+  main:
+    - identifier: post
+      name: Posts
+      url: /post/
+      weight: 10
+    - identifier: publication
+      name: Publications
+      url: /publication/
+      weight: 20
+    - identifier: tag
+      name: Tags
+      url: /tags/
+      weight: 30
 
 markup:
   goldmark:
