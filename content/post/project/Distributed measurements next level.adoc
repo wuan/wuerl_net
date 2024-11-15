@@ -15,26 +15,27 @@ NOTE: This article is still work in progress!
 
 The initial project described in xref:Distributed measurements.md[Distributed measurements] had some shortcomings:
 
-* No easy access to data of other measurement locations. This is required if you want to implement a dew point controlled ventilation.
+* No easy cross-access to data of other measurement locations. This is for example required if you want to implement a dew point controlled ventilation and therefore want to receive dew point data of outside measurement stations.
 
-* Maintaining the RaspberryPis was quite some effort. In the end most of the measurement locations have been updated to use RaspberryPi Zero Ws which were pretty stable, but the OS still needed to be managed (Using link:https://saltproject.io/[Salt] helped to keep them up to date, but there were still some manual steps and time involved to set up replacement systems.)
+* Maintaining the RaspberryPis was quite some effort. In the end most of the measurement locations have been updated to use RaspberryPi Zero Ws which were pretty stable, but the OS still needed to be managed (Using link:https://saltproject.io/[Salt] helped to keep them up to date. Still there were some manual staps involved setting up SD cards as a replacement. Faulty drives has been the main reason of failure over the time)
 
 == Ideas for moving next level
 
 * Use embedded systems for measurements
-** Use less power
+** They are using less power
+** Less need to keep OS up to date
 ** Should be easier to replace/scale
 ** But: We don't want to reimplement the software
-* Use standardised communication protocol, to become independent from the already outdated InfluxDB 1.8
+* Use standardised communication protocol, to become independent of the already outdated InfluxDB 1.8 timeseries data storage
 ** MQTT seems to be a good choice
 ** Simple integration with OpenHAB should be possible
 ** Supports subscribing to other sensor's data from everywhere.
 
 == Hardware selection
 
-After some research and as we were already using the link:https://github.com/adafruit/circuitpython[Adafruit Circuitpython] drivers in the RaspberryPi implementation we ordered a bunch of link:https://learn.adafruit.com/adafruit-qt-py-esp32-s2[Adafruit QT Py ESP32-S2] and to get started with. For now there is a separate project link:https://github.com/wuan/circuitpy-logger[] to get started, but we will integrate with the existing link:https://github.com/wuan/klimalogger[] as a future refactoring. Most of the codebase is already identical.
+After some research and as we were already using the link:https://github.com/adafruit/circuitpython[Adafruit Circuitpython] drivers in the RaspberryPi implementation we ordered a bunch of link:https://learn.adafruit.com/adafruit-qt-py-esp32-s2[Adafruit QT Py ESP32-S2] and to get started with. For now there is a separate project link:https://github.com/wuan/circuitpy-logger[], but we will integrate with the existing link:https://github.com/wuan/klimalogger[] as a future refactoring. Most of the codebase is already identical.
 
-After some weeks of testing the ESP32 modules are now running quite stable and usually have no problem with repeated power outages. The modules are easily configurable with a simple configuration file
+After some weeks of testing and improving the ESP32 modules and the software they are running quite stable and usually have no problem with repeated power outages. The modules are easily configurable with a simple configuration file like this:
 
 [source]
 ----
@@ -45,9 +46,9 @@ MQTT_PREFIX="sensors/test"
 ELEVATION="530"
 ----
 
-and installing the newest software is automated by using the `./install.py` script.
+and installing the newest software is automated by using the `./install.py` script from the repository mentioned above.
 
-For places with bad WLAN reception there is a version of the ESP32 board which can use an external WLAN antenna but in the end the setup is much more easy to maintain compared to the RaspberryPi version we used before (Some of the old RasberryPis are still in use and the `klimalogger` package has been updated to be able to use MQTT for data delivery as well).
+For places with bad WLAN reception there is a version of the ESP32 board which can use an external WLAN antenna but in the end the setup is easier to maintain compared to the RaspberryPi version we used before (Some of the old RasberryPis are still in use and the `klimalogger` package has been updated to be able to use MQTT for data delivery as well).
 
 == Missing software components
 
@@ -55,12 +56,92 @@ For places with bad WLAN reception there is a version of the ESP32 board which c
 
 Component to store data from MQTT into a timeseries database.
 
-We updated to link:https://docs.influxdata.com/influxdb/v2/[InfluxDB 2] but also setup an evaluation system with link:https://www.timescale.com/[Timescale]. For now we keep using InfluxDB as the Grafana integration for Timescale seemed not up to the level we have reached with InfluxDB.
+We updated to link:https://docs.influxdata.com/influxdb/v2/[InfluxDB 2] but also set up an evaluation system with link:https://www.timescale.com/[Timescale]. For now, we keep using InfluxDB as the Grafana integration for Timescale seemed not up to the level we have reached with InfluxDB.
 
-In order to put all the data being distributed via MQTT to those time series targets we created a separate compontent link:https://github.com/wuan/mqtt-gateway[] which uses link:https://www.rust-lang.org/[Rust] as a programming language which should be a good fit for a reliable and performant bridge service.
+In order to put all the data being distributed via MQTT to those time series targets we created a separate compontent link:https://github.com/wuan/mqtt-gateway[] which uses link:https://www.rust-lang.org/[Rust] as a programming language. This should be a good fit for a reliable and performant bridge service.
 
-In order to have time series data from other components like shelly relays, plugs and switches or our OpenDTU based receiver for our photovoltaic microinverter we added support and a configuration file base flexibility to the project.
+In order to have time series data from other components like the Shelly relays, plugs and switches we use or our OpenDTU based receiver for our photovoltaic micro inverter we added support and a configuration file base flexibility to the project.
+
+The operation of the bridge (incoming channels and outgoing storage systems) can be configured easily through one YAML file like:
+
+[source]
+----
+mqttUrl: "mqtt://<hostname>:1883"
+mqttClientId: "sensors_gateway"
+sources:
+  - name: "Sensor data"
+    type: "sensor"
+    prefix: "sensors"
+    targets:
+      - type: "influxdb"
+        host: "<influx host>"
+        port: 8086
+        database: "sensors"
+      - type: "postgresql"
+        host: "<postgres host>"
+        port: 5432
+        user: "<psql username>"
+        password: "<psql password"
+        database: "sensors"
+  - name: "Shelly data"
+    type: "shelly"
+    prefix: "shellies"
+    targets:
+      - type: "influxdb"
+        host: "<influx host>"
+        port: 8086
+        database: "shelly"
+      - type: "postgresql"
+        host: "<postgres host>"
+        port: 5433
+        user: "<psql username>"
+        password: "<psql password>"
+        database: "shelly"
+  - name: "PV data"
+    type: "opendtu"
+    prefix: "solar"
+    targets:
+      - type: "influxdb"
+        host: "<influx host>"
+        port: 8086
+        database: "solar"
+----
+
+Basically you just need to declare the MQTT prefix for the different kinds of data and then define a list of target storage systems (currently supporting InfluxDB and TimescaleDB).
 
 === Integration with OpenHAB
 
-In order to use sensor data for tasks like fan control we also started to integrate the MQTT data with the local running OpenHAB server
+In order to use sensor data for tasks like fan control we also started to integrate the MQTT data with the local running OpenHAB server. OpenHAB allows to configure MQTT items using configuration files like in the following examples.
+
+First we define OpenHAB "Things" using a file `AirSensors.things`:
+
+[source]
+----
+Bridge mqtt:broker:local "Local Broker" [ host="<hostname/IP>", secure=false ] {
+   ...
+  Thing topic Livingroom_Air "Air Livingroom" @ "Livingroom" {
+    Channels:
+      Type number : Temperature  [ stateTopic="sensors/Livingroom/temperature", transformationPattern="JSONPATH:$.value" ]
+      Type number : Humidity  [ stateTopic="sensors/Livingroom/relative humidity", transformationPattern="JSONPATH:$.value" ]
+      Type number : Dewpoint  [ stateTopic="sensors/Livingroom/dew point", transformationPattern="JSONPATH:$.value" ]
+      Type number : CO2  [ stateTopic="sensors/Livingroom/CO2", transformationPattern="JSONPATH:$.value" ]
+      Type number : VOCIndex  [ stateTopic="sensors/Livingroom/VOC index", transformationPattern="JSONPATH:$.value" ]
+  }
+   ...
+}
+----
+
+And as a second step we define OpenHAB "Items" using a file `AirSensors.items`:
+
+[source]
+----
+...
+Number:Temperature Livingroom_Air_Temperature "Livingroom Temperature [%.1f °C]" (Livingroom) {channel="mqtt:topic:local:Livingroom_Air:Temperature"}
+Number             Livingroom_Air_Humidity    "Livingroom Humidity [%.1f %%]"    (Livingroom) {channel="mqtt:topic:local:Livingroom_Air:Humidity"}
+Number:Temperature Livingroot_Air_DewPoint    "Livingroom Dewpoint [%.1f °C]"    (Livingroom) {channel="mqtt:topic:local:Livingroom_Air:Dewpoint"}
+Number             Livingroom_Air_CO2         "Livingroom CO2 [%.1f ppm]"        (Livingroom) {channel="mqtt:topic:local:Livingroom_Air:CO2"}
+Number             Livingroom_Air_VOCIndex    "Livingroom VOC Index"             (Livingroom) {channel="mqtt:topic:local:Livingroom_Air:VOCIndex"}
+...
+----
+
+After that you can use the Air sensor data for example to create a fan controlling rule.
