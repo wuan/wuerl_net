@@ -17,7 +17,8 @@ The initial project described in xref:Distributed measurements.md[Distributed me
 
 * No easy cross-access to data of other measurement locations. This is for example required if you want to implement a dew point controlled ventilation and therefore want to receive dew point data of outside measurement stations.
 
-* Maintaining the RaspberryPis was quite some effort. In the end most of the measurement locations have been updated to use RaspberryPi Zero Ws which were pretty stable, but the OS still needed to be managed (Using link:https://saltproject.io/[Salt] helped to keep them up to date. Still there were some manual staps involved setting up SD cards as a replacement. Faulty drives has been the main reason of failure over the time)
+* Maintaining the RaspberryPis was quite some effort. In the end most of the measurement locations have been updated to use RaspberryPi Zero Ws which were pretty stable, but the OS still needed to be managed (Using link:https://saltproject.io/[Salt] helped to keep them up to date. Still there were some manual staps involved setting up SD cards as a replacement. Faulty drives has been the main reason of failure over the time). +
+Update: Unfortunately Salt has stopped supporting 32-bit ARM targets so it is not possible right now to update to the most recent Debian without losing Salt support.
 
 == Ideas for moving next level
 
