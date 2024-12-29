@@ -1,7 +1,7 @@
 ---
 title: "Home page"
 layout: post
-summary: Homen page
+summary: Home page
 tags: []
 date: 2023-05-10
 ---
