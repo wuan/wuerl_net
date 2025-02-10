@@ -16,11 +16,11 @@ Fach: Physik
 
 Die Dissertation wurde am Lehrstuhl von [Paul Leiderer](https://de.wikipedia.org/wiki/Paul_Leiderer) an der [Universität Konstanz](http://www.uni-konstanz.de/) durchgeführt.
 
-[![Download Dissertation](../dissertation/dissertation_miniature.png)](http://kops.uni-konstanz.de/bitstream/handle/123456789/4967/Dissertation_Andreas_Wuerl.pdf?sequence=1&isAllowed=y)
+[![Download Dissertation](../dissertation/dissertation_miniature.png)](https://kops.uni-konstanz.de/bitstreams/f73b559a-1314-4d3c-af69-b7c83bc3ba18/download)
 
--   Veröffentlichung (URN: [`urn:nbn:de:bsz:352-opus-19799`](http://nbn-resolving.de/urn/resolver.pl?urn=urn:nbn:de:bsz:352-opus-19799))
-    -   [Veröffentlichung](http://kops.ub.uni-konstanz.de/handle/urn:nbn:de:bsz:352-opus-19799) im [KOPS](http://www.ub.uni-konstanz.de/kops/)
-    -   [PDF-Datei](http://kops.uni-konstanz.de/bitstream/handle/123456789/4967/Dissertation_Andreas_Wuerl.pdf?sequence=1&isAllowed=y)
+-   Veröffentlichung (URN: [`http://nbn-resolving.de/urn:nbn:de:bsz:352-opus-19799`](http://nbn-resolving.de/urn:nbn:de:bsz:352-opus-19799))
+    -   [Veröffentlichung](https://kops.uni-konstanz.de/entities/publication/3382208a-858b-45bd-8cdb-adc3041b686b) im [KOPS](http://www.ub.uni-konstanz.de/kops/)
+    -   [PDF-Datei](https://kops.uni-konstanz.de/bitstreams/f73b559a-1314-4d3c-af69-b7c83bc3ba18/download)
     - [Quellcode](https://github.com/wuan/diss)
 
 -   Publikationen
