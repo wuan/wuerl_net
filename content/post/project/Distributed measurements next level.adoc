@@ -13,28 +13,40 @@ date: 2024-07-18
 
 NOTE: This article is still work in progress!
 
-The initial project described in xref:Distributed measurements.md[Distributed measurements] had some shortcomings:
+In our previous project on xref:Distributed measurements.md[distributed measurements], we encountered some limitations that needed to be addressed. Specifically, we wanted to:
 
-* No easy cross-access to data of other measurement locations. This is for example required if you want to implement a dew point controlled ventilation and therefore want to receive dew point data of outside measurement stations.
-
-* Maintaining the RaspberryPis was quite some effort. In the end most of the measurement locations have been updated to use RaspberryPi Zero Ws which were pretty stable, but the OS still needed to be managed (Using link:https://saltproject.io/[Salt] helped to keep them up to date. Still there were some manual staps involved setting up SD cards as a replacement. Faulty drives has been the main reason of failure over the time). +
+* Easily access data from multiple measurement locations. +
+This is a requirement if you want to implement a dew point controlled ventilation and therefore need to receive dew point data of outside sensors.
+* Simplify the maintenance of our sensor networks. +
+Maintaining the RaspberryPis was quite some effort. In the end most of the measurement locations have been updated to use RaspberryPi Zero Ws which were pretty stable, but the OS still needed to be managed (Using link:https://saltproject.io/[Salt] helped to keep them up to date. Still there were some manual staps involved setting up SD cards as a replacement. Faulty drives has been the main reason of failure over the time). +
 *Update:* Unfortunately Salt has stopped supporting 32-bit ARM targets so it is not possible right now to update to the most recent Debian without losing Salt support.
 
-== Ideas for moving next level
+To overcome these challenges, we explored new hardware and software solutions.
 
-* Use embedded systems for measurements
-** They are using less power
-** Less need to keep OS up to date
-** Should be easier to replace/scale
-** But: We don't want to reimplement the software
-* Use standardised communication protocol, to become independent of the already outdated InfluxDB 1.8 timeseries data storage
-** MQTT seems to be a good choice
-** Simple integration with OpenHAB should be possible
-** Supports subscribing to other sensor's data from everywhere.
+== Hardware Selection
 
-== Hardware selection
+After researching various options, we decided to use the Adafruit QT Py ESP32-S2 as our next-generation sensor platform. This board offers several advantages:
 
-After some research and as we were already using the link:https://github.com/adafruit/circuitpython[Adafruit Circuitpython] drivers in the RaspberryPi implementation we ordered a bunch of link:https://learn.adafruit.com/adafruit-qt-py-esp32-s2[Adafruit QT Py ESP32-S2] and to get started with. For now there is a separate project link:https://github.com/wuan/circuitpy-logger[], but we will integrate with the existing link:https://github.com/wuan/klimalogger[] as a future refactoring. Most of the codebase is already identical.
+* Lower power consumption compared to Raspberry Pi-based solutions.
+* Easier maintenance due to its embedded system nature.
+* Improved scalability and replaceability.
+
+We also used the link:https://github.com/adafruit/circuitpython[Adafruit CircuitPython] drivers, which we were already familiar with from our previous project. To get started, we created a new project repository, integrating some existing codebases.
+
+== MQTT Integration
+To enable easy data exchange between our sensor networks, we implemented MQTT (Message Queuing Telemetry Transport) as our communication protocol of choice. This allowed us to:
+
+* Decouple our sensors from the data storage systems.
+* Simplify integration with other smart home systems like OpenHAB.
+
+We also created a separate repository for the MQTT gateway component, which uses Rust as its programming language. This ensures that our bridge service is reliable and performant.
+
+== Configuration and Operation
+To configure the operation of our MQTT bridge, we use a YAML file. This file defines:
+
+The incoming channels (e.g., sensor data).
+The outgoing storage systems (e.g., InfluxDB or TimescaleDB).
+
 
 After some weeks of testing and improving the ESP32 modules and the software they are running quite stable and usually have no problem with repeated power outages. The modules are easily configurable with a simple configuration file like this:
 
