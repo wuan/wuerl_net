@@ -1,0 +1,104 @@
+---
+title: "14 Years, 2 Million Installs, and a Fascination with Lightning"
+layout: post
+summary: Looking back at 14 years of building the Blitzortung Lightning Monitor Android app
+tags:
+  - android
+  - opensource
+  - kotlin
+  - blitzortung
+date: 2026-10-14
+---
+
+= 14 Years, 2 Million Installs, and a Fascination with Lightning
+
+In the next weeks, my Android app *Blitzortung Lightning Monitor* will pass two million installations. When I started it 14 years ago, I had no plan, no roadmap, and certainly no ambition to build anything this size. I just wanted to see where lightning was striking -- on the device in my pocket.
+
+Today, looking back, the journey of this little side project feels like a summary of everything I've learned about software, communities, and persistence.
+
+== How it started
+
+Blitzortung.org is a remarkable community project: thousands of hobbyists around the world build and operate their own lightning detection stations, assembling a worldwide, community-powered lightning location network in their spare time. I was fascinated by the idea -- and by thunderstorms in general.
+
+Back then, the live data was only accessible on the project's website. So I decided to write an Android app to visualize it on a map. Android itself was still young. The first versions were simple: a map, colored strikes, an alarm when a storm was approaching. But people started using it. And once people use your software, you're responsible.
+
+== 14 years of Android, compressed
+
+If you want to feel how much a platform can change in 14 years, maintain one app for that long. Just some of the things that broke -- or were rebuilt -- along the way:
+
+* Build systems: from the early days to Gradle, Kotlin, and fully automated CI builds
+* The language journey: the app started in Java, took a detour through Lombok and Retrolambda to tame the boilerplate -- and moved to Kotlin in 2015, long before that was the obvious choice
+* Dependency injection, coroutines, and a migration to a modern ViewModel architecture
+* The runtime permission model, background execution limits, Doze mode, and battery optimization
+* Notifications, widgets, edge-to-edge display -- every Android release brought new rules
+* Performance work like R8 minification just to keep the map smooth during heavy thunderstorm activity
+
+The biggest technical lesson: *you never stop migrating*. An app that survives is not the one with the best architecture at launch -- it's the one that can be continuously refactored without breaking. 1,456 commits and more than 200 releases later, almost nothing of the original code remains. And that's exactly how it should be.
+
+== The hardest decision: saying goodbye to Google Maps
+
+Not every migration was driven by technology alone. In 2019, the app still ran on the long-deprecated Google Maps API v1 -- a proprietary dependency that had to go for two reasons: it was effectively unmaintainable, and as long as it was in the app, F-Droid -- the free and open-source app repository -- could not distribute the app at all.
+
+So I rebuilt the map layer on OpenStreetMap. It was the right decision: the app became fully free software, independent from proprietary licensing, and available to a community that deeply cares about openness and privacy.
+
+It was also the moment I learned what a map means to people. The new one looked different, behaved differently, and initially missed some beloved details. The reaction was one of the roughest phases of the whole project: a wave of one-star ratings and harsh reviews from users who felt their app had been taken away. Some of that criticism was fair -- and the map steadily got better because of it. But it was a strange experience to be publicly pressured over a change that was technically necessary, and made precisely to keep the app free and open.
+
+== The illusion of precision
+
+One design decision shaped the app from the very beginning -- and I have been explaining it ever since. Together with the maintainers of Blitzortung.org, we agreed that the app should not display full-precision lightning locations. Instead, strikes are accumulated on a data grid -- counts in squares of a few kilometers.
+
+On paper, that sounds like giving users less. In practice, it turned out to be one of the best decisions in the project's history: the grid keeps the app responsive even during the heaviest thunderstorm activity, it drastically reduces network usage, and it is what made the animated history view possible in the first place. Precision that a phone cannot render smoothly is precision nobody benefits from.
+
+And yet, some users resent "not getting the full information." The irony: the point representation they long for is itself only the result of a statistical calculation, with a lateral error that varies from strike to strike -- a dot on the map may sit far from where the lightning actually struck. What looks like an exact position suggests a certainty that physically isn't there. The grid is more honest about that truth, and it took me a while to fully appreciate that overcoming the convenience of apparent precision was not a compromise -- it was the better model, all around.
+
+== And then the game changed again
+
+The most recent chapter deserves its own mention. In the last year, LLM-assisted coding has changed the game for this project -- as it has for so many others. Features that once consumed whole evenings now take a fraction of the time, and refactors I would previously have carefully avoided suddenly became affordable. It even enabled something I had long postponed: porting the original server backend to a modern Rust implementation, link:https://github.com/wuan/bo-srv-rs[bo-srv-rs].
+
+For a one-person project, that is more than convenience -- it's a second wind. But I've also learned that the tools don't decide _what_ is worth building. That part still takes the 14 years of scars.
+
+== 150,000 active users, one maintainer
+
+That episode put a longer-standing tension into words. Two million installs is a cumulative number -- the app's active user base today is around 150,000 people. Either way, this project deliberately has no business model: no ads, no tracking, no premium tier, no income. It is a hobby, built with enthusiasm in stolen evenings.
+
+The vast majority of users understand that wonderfully, and their appreciation is what keeps the project alive. But some treat a free app as if it were a commercial service they had paid for -- and use one-star ratings as leverage to demand features or instant fixes. Early on, that genuinely hurt and gave me more than one headache. Over the years, I've grown much more relaxed about rough communication. An angry review contains information like any other feedback: take the content, leave the tone. And I've come to see the anger as attachment -- people only got this upset because the app _matters_ to them. That doesn't make the one-star rating a fair verdict. But it makes it possible to read it calmly.
+
+== What the community gave back
+
+From day one, the app has been open source. That decision shaped everything.
+
+Over the years, contributors have sent translations, bug fixes, and improvements I would never have thought of -- or gotten to. Users wrote reviews that were often more useful than any QA process. F-Droid packaged and distributed the app to an audience that cares deeply about open source and privacy. And the Blitzortung.org community kept extending the network's coverage across Europe, the Americas, Asia, Africa, and Australia -- my app is just a small window onto the data they collectively produce.
+
+A one-man project became something owned by many. That's the quiet superpower of open source: *it turns users into co-owners.*
+
+== What I learned
+
+A few things 14 years of a side project taught me:
+
+. *Persistence beats brilliance.* There was no single big moment. Just showing up, again and again, for one small iteration after another.
+. *Users forgive missing features. They don't forgive a dead battery or a missed storm alarm.* Reliability _is_ the feature.
+. *"Done" is a direction, not a destination.* Software that serves people is never finished -- and that's not a burden, it's a privilege.
+. *Open source is a gift that pays back with interest.* In code quality, in reach, and in the people you meet.
+. *A one-star review is feedback, not a verdict.* Take the content, leave the tone -- a skill that takes years and is worth every one of them.
+
+== Documentation is a feature
+
+One realization took me longer than it should have: documentation is a feature, too. An app can only be used for what people know it can do -- and over the years it became clear that a good documentation helps users discover exactly that. So the project grew a dedicated documentation, hosted at link:https://blitzortung.tryb.de[blitzortung.tryb.de], with its sources in the open link:https://github.com/wuan/blitzortung_apps[blitzortung_apps repository]. Explaining what the app is _for_ turned out to be almost as valuable as building it.
+
+== Thank you
+
+This milestone is not mine alone, and a few thank-yous are overdue.
+
+*To TNG, my employer back then:* the app's very beginning traces back to your TechDays. Using that time to dive into the Android ecosystem was the seed from which everything else grew -- a reminder that letting engineers explore new technologies during working hours pays off in ways nobody can plan in advance.
+
+*To the users who became contributors:* everyone who contributed a translation, sent a pull request, or took the time to write valuable feedback -- encouraging and critical alike. You turned a one-person side project into something owned by many.
+
+*To the station operators of Blitzortung.org,* whose data powers every map this app has ever drawn -- and to everyone who trusted a free, open-source, privacy-friendly app with a spot on their home screen.
+
+I'm curious what the next 14 years will bring. The storms, at least, are guaranteed.
+
+'''
+
+🔗 *Blitzortung Lightning Monitor* -- free on link:https://play.google.com/store/apps/details?id=org.blitzortung.android.app[Google Play] and link:https://f-droid.org/packages/org.blitzortung.android.app/[F-Droid], open source under Apache 2.0 on link:https://github.com/wuan/bo-android[GitHub], with the full documentation at link:https://blitzortung.tryb.de[blitzortung.tryb.de].
+
+#AndroidDev #OpenSource #SideProject #Kotlin #Blitzortung #Thunderstorms #Community
