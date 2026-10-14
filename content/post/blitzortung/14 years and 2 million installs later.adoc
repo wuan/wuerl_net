@@ -51,6 +51,12 @@ On paper, that sounds like giving users less. In practice, it turned out to be o
 
 And yet, some users resent "not getting the full information." The irony: the point representation they long for is itself only the result of a statistical calculation, with a lateral error that varies from strike to strike -- a dot on the map may sit far from where the lightning actually struck. What looks like an exact position suggests a certainty that physically isn't there. The grid is more honest about that truth, and it took me a while to fully appreciate that overcoming the convenience of apparent precision was not a compromise -- it was the better model, all around.
 
+== What a $100 cloud bill taught me
+
+Operating my own backend on a hobby budget came with an early lesson in cloud economics. In the early days, the backend ran on one of the big hyperscaler cloud platforms — and as soon as the first monthly bills arrived at more than $100, it was clear that this would not be the way to go. Since then, the backend runs on two redundant virtual servers as part of the hosting.de offering: without a single issue, and for a fraction of the price.
+
+The hyperscalers' flexibility is real — but for a steady, predictable workload, boring traditional hosting wins on every metric that matters for a side project.
+
 == And then the game changed again
 
 The most recent chapter deserves its own mention. In the last year, LLM-assisted coding has changed the game for this project -- as it has for so many others. Features that once consumed whole evenings now take a fraction of the time, and refactors I would previously have carefully avoided suddenly became affordable. It even enabled something I had long postponed: porting the original server backend to a modern Rust implementation, link:https://github.com/wuan/bo-srv-rs[bo-srv-rs].
