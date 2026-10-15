@@ -23,6 +23,7 @@ outputs:
     - JSON
 
 params:
+  mainSections: [ "post" ]
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
   description: "wuerl.net site"
   keywords: [ Blog, Portfolio, PaperMod ]
