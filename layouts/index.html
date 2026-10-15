@@ -1,34 +1,8 @@
 {{- define "main" }}
 
-{{- if (and site.Params.profileMode.enabled .IsHome) }}
+{{- if site.Params.profileMode.enabled }}
 {{- partial "index_profile.html" . }}
-{{- else }} {{/* if not profileMode */}}
-
-{{- if not .IsHome | and .Title }}
-<header class="page-header">
-  {{- partial "breadcrumbs.html" . }}
-  <h1>
-    {{ .Title }}
-    {{- if and (or (eq .Kind `term`) (eq .Kind `section`)) (.Param "ShowRssButtonInSectionTermList") }}
-    {{- with .OutputFormats.Get "rss" }}
-    <a href="{{ .RelPermalink }}" title="RSS" aria-label="RSS">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-        stroke-linecap="round" stroke-linejoin="round" height="23">
-        <path d="M4 11a9 9 0 0 1 9 9" />
-        <path d="M4 4a16 16 0 0 1 16 16" />
-        <circle cx="5" cy="19" r="1" />
-      </svg>
-    </a>
-    {{- end }}
-    {{- end }}
-  </h1>
-  {{- if .Description }}
-  <div class="post-description">
-    {{ .Description | markdownify }}
-  </div>
-  {{- end }}
-</header>
-{{- end }}
+{{- else }}
 
 {{- if .Content }}
 <div class="post-content md-content">
@@ -38,35 +12,28 @@
 </div>
 {{- end }}
 
-{{- $pages := union .RegularPages .Sections }}
-
-{{- if .IsHome }}
-{{- $pages = where site.RegularPages "Params.hiddenInHomeList" "!=" "true" }}
-{{- $publications := where $pages "Type" "publication" }}
-{{- $main := where $pages "Type" "in" site.Params.mainSections }}
-{{- $pages = $publications }}
-{{- range $main }}{{ $pages = $pages | append . }}{{ end }}
-{{- end }}
+{{- $all := where site.RegularPages "Params.hiddenInHomeList" "!=" "true" }}
+{{- $posts := where $all "Type" "in" site.Params.mainSections }}
+{{- $publications := where $all "Type" "publication" }}
+{{- $pages := $posts }}
+{{- range $publications }}{{ $pages = $pages | append . }}{{ end }}
 
 {{- $paginator := .Paginate $pages }}
 
-{{- if and .IsHome site.Params.homeInfoParams (eq $paginator.PageNumber 1) }}
+{{- if and site.Params.homeInfoParams (eq $paginator.PageNumber 1) }}
 {{- partial "home_info.html" . }}
 {{- end }}
 
-{{- $term := .Data.Term }}
+{{- $sectionTitles := dict "post" "Posts" "publication" "Publications" }}
+{{- $prevType := "" }}
 {{- range $index, $page := $paginator.Pages }}
 
-{{- $class := "post-entry" }}
-
-{{- $user_preferred := or site.Params.disableSpecial1stPost site.Params.homeInfoParams }}
-{{- if (and $.IsHome (eq $paginator.PageNumber 1) (eq $index 0) (not $user_preferred)) }}
-{{- $class = "first-entry" }}
-{{- else if $term }}
-{{- $class = "post-entry tag-entry" }}
+{{- if ne $page.Type $prevType }}
+<h2 class="post-section-title">{{ index $sectionTitles $page.Type | default $page.Type }}</h2>
+{{- $prevType = $page.Type }}
 {{- end }}
 
-<article class="{{ $class }}">
+<article class="post-entry">
   {{- $isHidden := (.Param "cover.hiddenInList") | default (.Param "cover.hidden") | default false }}
   {{- partial "cover.html" (dict "cxt" . "IsSingle" false "isHidden" $isHidden) }}
   <header class="entry-header">
