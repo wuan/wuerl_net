@@ -78,7 +78,7 @@ The most recent chapter deserves its own mention. In the last year, LLM-assisted
 
 For a one-person project, that is more than convenience -- it's a second wind. But I've also learned that the tools don't decide _what_ is worth building. That part still takes the 14 years of scars.
 
-image::/post/blitzortung/14-years-and-2-million-installs-later/app_2.5.4.png[Blitzortung Lightning Monitor 2.5.4 with lightning activity in the Caribbean, live strikes on the data grid, with wind rose, rate graph, and history slider]
+image::/post/blitzortung/14-years-and-2-million-installs-later/app_2.5.4.png[Blitzortung Lightning Monitor 2.5.4 with lightning activity in the Caribbean live strikes on the data grid with wind rose rate graph and history slider,width=75%]
 
 == 150,000 active users, one maintainer
 
