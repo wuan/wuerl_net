@@ -43,7 +43,11 @@ The biggest technical lesson: *you never stop migrating*. An app that survives i
 
 Not every migration was driven by technology alone. In 2019, the app still ran on the long-deprecated Google Maps API v1 -- a proprietary dependency that had to go for two reasons: it was effectively unmaintainable, and as long as it was in the app, F-Droid -- the free and open-source app repository -- could not distribute the app at all.
 
+image::/post/blitzortung/14-years-and-2-million-installs-later/gmapv1_1.6.5.png[Blitzortung Lightning Monitor on the deprecated Google Maps API v1, version 1.6.5]
+
 So I rebuilt the map layer on OpenStreetMap. It was the right decision: the app became fully free software, independent from proprietary licensing, and available to a community that deeply cares about openness and privacy.
+
+image::/post/blitzortung/14-years-and-2-million-installs-later/osm_2.0.0.png[The same app rebuilt on OpenStreetMap, version 2.0.0]
 
 It was also the moment I learned what a map means to people. The new one looked different, behaved differently, and initially missed some beloved details. The reaction was one of the roughest phases of the whole project: a wave of one-star ratings and harsh reviews from users who felt their app had been taken away. Some of that criticism was fair -- and the map steadily got better because of it. But it was a strange experience to be publicly pressured over a change that was technically necessary, and made precisely to keep the app free and open.
 
