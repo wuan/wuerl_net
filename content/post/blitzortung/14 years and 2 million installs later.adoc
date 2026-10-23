@@ -78,6 +78,8 @@ The most recent chapter deserves its own mention. In the last year, LLM-assisted
 
 For a one-person project, that is more than convenience -- it's a second wind. But I've also learned that the tools don't decide _what_ is worth building. That part still takes the 14 years of scars.
 
+image::/post/blitzortung/14-years-and-2-million-installs-later/app_2.5.4.png[Blitzortung Lightning Monitor 2.5.4 with lightning activity in the Caribbean, live strikes on the data grid, with wind rose, rate graph, and history slider]
+
 == 150,000 active users, one maintainer
 
 That episode put a longer-standing tension into words. Two million installs is a cumulative number -- the app's active user base today is around 150,000 people. Either way, this project deliberately has no business model: no ads, no tracking, no premium tier, no income. It is a hobby, built with enthusiasm in stolen evenings.
