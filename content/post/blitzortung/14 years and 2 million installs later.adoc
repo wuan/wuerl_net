@@ -10,8 +10,8 @@ tags:
 date: 2026-10-14
 cover:
   image: "/post/blitzortung/14-years-and-2-million-installs-later/title.jpg"
-  alt: "Blitzortung Lightning Monitor -- lightning strikes on a map"
-  caption: "Blitzortung Lightning Monitor"
+  alt: "A harvested golden field under towering summer clouds that may still develop into a thunderstorm"
+  caption: "A classic summer sky: towering clouds that may yet grow into a thunderstorm."
 ---
 
 = 14 Years, 2 Million Installs, and a Fascination with Lightning
