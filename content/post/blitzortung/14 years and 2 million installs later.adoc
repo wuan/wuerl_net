@@ -9,7 +9,7 @@ tags:
   - blitzortung
 date: 2026-10-14
 cover:
-  image: "/post/blitzortung/14-years-and-2-million-installs-later/article_title.jpg"
+  image: "/post/blitzortung/14-years-and-2-million-installs-later/article title.jpg"
   alt: "A harvested golden field under towering summer clouds that may still develop into a thunderstorm. On the right a screenshot of the current version of the app"
   caption: "A classic summer sky: towering clouds that may yet grow into a thunderstorm."
 ---
